@@ -1,5 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="RIZUMU"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -22,10 +22,10 @@
 <div align="center">
   <!-- <img src="images/rizumu-logo.png" alt="Logo" width="80" height="80"> -->
 
-<h3 align="center">FER : Emosi Senang dan Sedih dari Ekspresi Wajah</h3>
+<h3 align="center">Object Tracking for Cars Using a Pre-trained YOLO Model</h3>
 
   <p align="center">
-    Penggunaan Teknologi FER dalam Mengidentifikasi Emosi Senang dan Sedih dari Ekspresi Wajah
+    Object Tracking for Cars Using a Pre-trained YOLOv8 Model
   </p>
 </div>
 
@@ -33,12 +33,6 @@
 <h3 align="center">Oleh: </h3>
   <p align="center">
     Muhammad Faqih A - 1301213056
-  </p>
-  <p align="center">
-    Muhammad Antarez Q - 1301210572
-  </p>
-  <p align="center">
-    Dian Syafilla - 1301213229
   </p>
 </div>
 
@@ -61,49 +55,56 @@
 <!-- Screenshots -->
 ## ScreenShots
 
+Input:
 <div align="center">
-  <img src="Screenshot 2024-12-30 200031.png" width="400" />
+  <img src="before 1.png" width="400" />
+  <img src="before 2.png" width="400" />
 </div>
 
-Hasil Predik:
+Output:
 <div align="center">
-  <img src="Screenshot 2024-12-30 202642.png"  width="400" />
-  <img src="Screenshot 2024-12-30 202701.png" " width="400" />
-</div>
-<div align="center">
-  <img src="Screenshot 2024-12-30 202738.png" width="400" />
-  <img src="Screenshot 2024-12-30 202721.png" width="400" />
-</div>
-<div align="center">
-  <img src="Screenshot 2024-12-30 2025110.png" width="400" />
-  <img src="Screenshot 2024-12-30 202510.png" width="400" />
+  <img src="after 1.png"  width="400" />
+  <img src="after 2.png" " width="400" />
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Membuat aplikasi FER serderhana berbasis web dengan menggunakan framework flask untuk mengidentifikasi emosi senang dan sedih dari ekspresi wajah.
+This project focuses on **Object Tracking for Cars Using a Pre-trained YOLO Model**. The implementation is done using **YOLOv8** in **Google Colab**, enabling efficient object detection and tracking in real-time scenarios. The main objective is to track car movements using video footage captured from two different CCTV cameras installed on public roads.
 
 ### Arsitektur Model
 
-Model Inception-ResNet dimodifikasi dengan layer tambahan seperti pooling global, batch normalization, dan dropout.
+- Utilizes **YOLOv8** (You Only Look Once version 8), a state-of-the-art object detection model developed by Ultralytics.
+- Employs a **pre-trained model based on the COCO (Common Objects in Context) dataset**, which includes car classes.
+- Combines **object detection** and **object tracking** pipelines to consistently follow the same vehicle across video frames.
+- Uses deep learning-based tracking algorithms (e.g., DeepSORT) integrated with YOLO for assigning unique IDs to each detected car.
 
-### Dataset FER - 2013
-Dataset ini terdiri dari lebih dari 12.000 data untuk train dan 3.000 untuk validasi untuk gambar wajah dalam dua kelas emosi, yaitu "happy" dan "sad".
+### Dataset
+- The dataset consists of **video recordings from two different CCTV cameras** located on public roads.
+- Each video contains continuous traffic footage used for testing the car detection and tracking pipeline.
+- Videos are processed frame-by-frame, and YOLOv8 is applied to detect cars, which are then tracked across frames.
 
-### Hasil Training
-* accuracy: 0.9772
-* loss: 0.0637
-* val_accuracy: 0.8871
-* val_loss: 0.4976
+**CCTV Video Sources:**
+- [Video CCTV 1](https://drive.google.com/file/d/1krf3znKFYcXseeWuVsQPvpDcZ0-JiHFO/view?usp=drive_link)
+- [Video CCTV 2](https://drive.google.com/file/d/1wF6DZHSniimzsOq3wnqFZpPMl73F6wlR/view?usp=drive_link)
+
+### Output Videos
+
+The following are the results of the object tracking process applied to the CCTV footage:
+
+- [Output Video 1](https://drive.google.com/file/d/1xkZheE6Nj0YcTJwFRd9oJuFJj23HNN7b/view?usp=drive_link)
+- [Output Video 2](https://drive.google.com/file/d/1fO98ZYEYHLiUvpJ0VEO2qLfTTJe7aPFs/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-* Flask
-* Python
-* Tensorflow
+- **Google Colab** – Cloud-based platform for coding and training the model.
+- **Python** – Core programming language used for development.
+- **YOLOv8 by Ultralytics** – Pre-trained object detection model.
+- **OpenCV** – For video processing and visualization.
+- **NumPy & Pandas** – For data manipulation and preprocessing.
+- **Matplotlib** – For displaying sample results and plots.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
